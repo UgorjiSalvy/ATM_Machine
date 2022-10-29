@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM_Machine</title>
+</head>
+<body>
+    <script>
+        let balance = 1234567890
+        const cardPin = 1234
+        var userCardPin = prompt("Please input your Card Pin: ")
+        while (true) {
+            if (userCardPin == cardPin) {
+                var options = prompt("TO: \n withdraw - Input 1 \n check balance - Input 2 \n deposit - Input 3 \n quit - Input 4")
+            }
+            else {
+                console.log("You have inputed a wrong pin")
+                alert("You have inputed a wrong pin")
+            }
+            if (options == 1) {
+                var amount = Number(prompt("please input the amount to be withdrawn: "))
+                let withdrawal = balance - amount
+                withdrawal = Math.floor(withdrawal)
+                console.log(`You want to withdraw ${amount} from ${balance}, ${withdrawal} is your new balance.`)
+            }
+            else if (options == 3) {
+                var amount = Number(prompt("please input the amount to be deposited: "))
+                let deposit = balance + amount
+                deposit = Math.floor(deposit)
+                console.log(`You want to deposit ${amount} to ${balance}, ${deposit} is your new balance.`)
+            }
+            else if (options == 4) {
+                console.log("Thank you for using the ATM Machine")
+                break;
+            }
+            else if (options == 2) {
+                console.log(`${balance} is your balance`)
+            }
+            else {
+                console.log("This is not a valid option.")
+            }
+        }
+    </script>
+</body>
+</html>
